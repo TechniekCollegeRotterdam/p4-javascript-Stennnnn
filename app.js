@@ -2,19 +2,21 @@
 let namePerson;
 let country;
 let p = document.getElementById("output");
-//stop de name van html in namePerson variabel en voer de function changeInput uit.
-const nameChanged = function(event){
-    //het event console loggen
-    namePerson = event.target.value;
-    changeInput(event);
+let nameId = document.getElementById("nameChange");
+let countryId = document.getElementById("countryChange");
+
+nameId.addEventListener("change", nameChanged());
+countryId.addEventListener("change", countryChange());
+
+const nameChanged = function(){
+    namePerson = nameId;
+    changeInpu();
 }
-//sla de input op in de variabel en voer de changeInput function uit.
-const countryChange = function(event) {
-    country = event.target.value;
-    changeInput(event);
+const countryChange = function(){
+    country = countryId;
+    changeInpu();
 }
-// pak de p element en stop de p variabel erin.
-const changeInput = function(){
-    const text = `Je heet ${namePerson} en je komt uit ${country}`;
+const changeInpu = function(){
+    const text = `mijn naam is ${namePerson} en ik kom uit ${country}`;
     p.textContent = text;
 }
