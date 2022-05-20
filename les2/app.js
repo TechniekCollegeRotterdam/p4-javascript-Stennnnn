@@ -2,6 +2,12 @@
 // . is voor class, hashtag is voor id en niks is voor html tag.
 
 let bird = document.querySelector(".bird")
+
+bird.addEventListener("click", function(){
+    pixels = pixels + 50;
+    bird.style.left = pixels + "px";
+
+});
 let px = 0;
 window.addEventListener("keydown", function (e) {
     console.log(e.key);
